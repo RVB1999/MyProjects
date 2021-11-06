@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(yellow,purple);
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1{
+            color: purple;
+            animation-name: move;
+            animation-duration: 2s;
+            animation-iteration-count:infinite;
+           animation-direction: alternate;
+        }
+        img{
+            width: 300px;
+            border: 10px solid white;
+            display: none;
+        }
+        #img2{
+            width: 300px;
+            border: 10px solid white;
+            display: none;
+        }
+        @keyframes move {
+            0%{
+                color: purple;
+                transform: translateY(-50px) rotate(-15deg);
+            }
+            50%{
+                color: red;
+            }
+            100%{
+                color: purple;
+                transform: translateY(50px) rotate(15deg);
+            }
+
+        }
+    </style>
+</head>
+<body>
+   <header>
+       <h2 id="score">Score:0</h2>
+       <h1>Riddle Master</h1>
+   </header> 
+   
+   <h3>What has to be broken before you can use it?</h3>
+   <input type="text" name="" id="q1">
+   <button onclick="q1()">Submit Answer</button>
+   <button onclick="h1()">Hint</button>
+   <h3>Result</h3>
+   <h4 id="result"></h4>
+   <img id="i1"  src="https://solidstarts.com/wp-content/uploads/when-can-babies-eat-eggs.jpg" alt="">
+   <h3>I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I? </h3>
+   <input type="text" name="" id="q2">
+   <button onclick="q2()">Submit Answer</button>
+   <button onclick="h2()">Hint</button>
+   <h3>Result</h3>
+   <h4 id="result2"></h4>
+   <img id="img2" src="https://geology.com/world/world-map.gif" alt="">
+   <h3>I have keys, but no locks and space, and no rooms. You can enter, but you can’t go outside. What am I?</h3>
+   <input type="text" name="" id="q3">
+   <button onclick="q3()" >Submit Answer</button>
+   <button onclick="h3()">Hint</button>
+   <h3>Result</h3>
+   <h4 id="result3"></h4>
+   <img id="img3" src="https://techcrunch.com/wp-content/uploads/2021/02/keyboard.jpg" alt="">
+</body>
+<script> 
+var score=0
+function h1() {
+document.getElementById("i1").style.display = 
+"inline-block";
+}
+
+    function q1(){
+var q1 = document.getElementById("q1").value
+if (q1.toUpperCase() == "EGG") {
+    document.getElementById("result").innerText = 
+      "Correct Answer"
+      score = score + 1;
+      document.getElementById("score").innerText = 
+      "Score:" + score;
+}
+else {
+    document.getElementById("result").innerText = 
+    "Wrong Answer"
+}
+    }
+
+function h2(){
+    document.getElementById("img2").style.display = 
+    "inline-block"
+}
+function q2(){
+    var q2 = document.getElementById("q2").value
+    if (q2.toUpperCase() == "MAP") {
+        document.getElementById("result2").innerText = 
+        "Correct Answer"
+        score = score + 1;
+        document.getElementById("score").innerText = 
+      "Score:" + score;
+    }
+else {
+    document.getElementById("result2").innerText = 
+    "Wrong Answer"
+}
+}
+
+
+function h3(){
+    document.getElementById("img3").style.display = 
+    "inline-block"
+}
+function q3(){
+    var q3 = document.getElementById("q3").value
+    if (q3.toUpperCase() == "KEYBOARD") {
+        document.getElementById("result3").innerText = 
+        "Correct Answer"
+        score = score + 1;
+        document.getElementById("score").innerText = 
+      "Score:" + score;
+    }
+else {
+    document.getElementById("result3").innerText = 
+    "Wrong Answer"
+}
+}
+</script>
+</html>
